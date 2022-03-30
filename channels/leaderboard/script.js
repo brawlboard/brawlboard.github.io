@@ -25,10 +25,6 @@ let CHANNELID = [
 ];
 
 function fn60sec() {
-    var channelList = [];
-    var channelName = [];
-    var channelImage = [];
-    var subscriberCount = [];
 
     for (var q = 0; q < CHANNELID.length; q++) {
         let id = CHANNELID[q];
@@ -42,8 +38,6 @@ function fn60sec() {
         }).then(response => response.json()).then(result => {
             console.log('🟡');
 
-            //  $(`.channel .${id}-name .channelName`).html('<i class="fab fa-youtube"></i> ' + result.channelName);
-            //  $(`.channel .${id}-sub .subscriberCount`).html(result.estimatedSubCount);
             document.getElementById(id + '-sub').innerText = result.estimatedSubCount
             document.getElementById(id + '-name').innerText = result.channelName
             document.getElementById(id + '-img').src = result.avatar;

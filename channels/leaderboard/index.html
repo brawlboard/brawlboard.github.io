@@ -48,7 +48,7 @@
 			while (iterationCard <= CONFIG.numberOfChannels / CONFIG.numberOfRows) {
 				console.log(2222)
 				var channelNumberObject = Math.floor(iterationCard + ((iterationRow - 1) * CONFIG.numberOfChannels / CONFIG.numberOfRows));
-				let id = CHANNELID[channelNumberObject-1];
+				let id = CHANNELID[channelNumberObject - 1];
 
 				var htmlSubscriberCard = `<div class='${id} channel_${channelNumberObject} card'>
 					<img class='channelImage card-img-top img-fluid rounded-top' id='${id}-img' src='https://yt3.ggpht.com/a-/AAuE7mB98CJL1Ye38OXbGM8WMR8lJVJRV_kXU1utHA=s240-mo-c-c0xffffffff-rj-k-no'/>
