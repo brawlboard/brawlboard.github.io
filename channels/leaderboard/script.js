@@ -4,7 +4,6 @@ let CONFIG = {
 };
 let CHANNELID = [
     'UCThfpuJ8LX7YeRpmSvB_lIQ',
-    'UCmQLNfaoSDNVij2x94XxBmg',
     'UCBGjyYxljtz9dRdccMnkDbQ',
     'UCR1RhHf1ON0eDyi2dN3rXNA',
     'UCVuRmP-R6Fx8h0xRXsM3zog',
