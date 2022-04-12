@@ -17,9 +17,10 @@ let CHANNELID = [
     'UCdDEtGAW0_BPtgmdSzz6MOA',
     'UCMlULIKTHv9MCWdaKgH712Q',
     'UC8rcDovVw8stUqK47105MMQ',
-    'UCkQnO5zaeFpeouwcxu-mp_g',
+    'UCdDEtGAW0_BPtgmdSzz6MOA',
     'UCOYorfo-ueDgFg-6B24GJnQ',
-    'UC51a9oE5nT_DMDuu0C7pzqw'
+    'UC51a9oE5nT_DMDuu0C7pzqw',
+    ''
 ];
 
 function fn60sec() {
