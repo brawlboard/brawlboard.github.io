@@ -17,16 +17,25 @@ let CHANNELID = [
     'UCdDEtGAW0_BPtgmdSzz6MOA',
     'UCMlULIKTHv9MCWdaKgH712Q',
     'UC8rcDovVw8stUqK47105MMQ',
-    'UCkQnO5zaeFpeouwcxu-mp_g',
-    'UCOYorfo-ueDgFg-6B24GJnQ',
-    'UC51a9oE5nT_DMDuu0C7pzqw'
+    'UCHkbIdjKbk14EIkMcRoqs3g'
 ];
+let cData = []
+function arrayPush(item) {
+    if (!cData.find(({ id }) => id === item.id)) {
+        cData.push(item);
 
-function fn60sec() {
+    }
+    if (cData.find(({ id }) => id === item.id)) {
+
+        var foundIndex = cData.findIndex(x => x.id == item.id);
+        obj = cData[foundIndex];
+        obj.subcount = item.subcount;
+    }
+}
+async function updateData() {
 
     for (var q = 0; q < CHANNELID.length; q++) {
         let id = CHANNELID[q];
-        console.log("🟢Fetching...");
         fetch("https://api-v2.nextcounts.com/api/youtube/channel/estimate/mixerno/" + id, {
             method: "GET",
             mode: 'cors',
@@ -34,16 +43,38 @@ function fn60sec() {
                 'Content-Type': 'application/json',
             },
         }).then(response => response.json()).then(result => {
-            console.log('🟡');
-
-            document.getElementById(id + '-sub').innerText = result.estimatedSubCount
-            document.getElementById(id + '-name').innerText = result.channelName
-            document.getElementById(id + '-img').src = result.avatar;
-            console.log("⭕")
-
+            let a = {
+                id: id,
+                subcount: parseInt(result.estimatedSubCount),
+                name: result.channelName,
+                logo: result.avatar
+            }
+            arrayPush(a);
         });
+    };
+    cData.sort((a, b) => parseFloat(b.subcount) - parseFloat(a.subcount));
+    console.log(cData)
+};
+
+async function updateCounter() {
+
+    for (var q = 0; q < cData.length; q++) {
+        let cId = cData[q].id;
+        
+        cData.forEach(update);
+        
+        function update(item) {
+            cData.find(({ id }) => id === cId); 
+            var foundIndex = cData.findIndex(x => x.id == item.id);
+            obj = cData[foundIndex];
+            document.getElementById(foundIndex+'-sub').innerText = obj.subcount;
+            document.getElementById(foundIndex + '-name').innerText = obj.name;
+            document.getElementById(foundIndex + '-img').src = obj.logo;
+        }
     };
 };
 
-fn60sec();
-setInterval(fn60sec, 5 * 1000);
+updateData();
+updateCounter();
+setInterval(updateData, 5 * 1000);
+setInterval(updateCounter, 3 * 1000);
