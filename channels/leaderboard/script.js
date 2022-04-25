@@ -17,7 +17,14 @@ let CHANNELID = [
     'UCdDEtGAW0_BPtgmdSzz6MOA',
     'UCMlULIKTHv9MCWdaKgH712Q',
     'UC8rcDovVw8stUqK47105MMQ',
-    'UCHkbIdjKbk14EIkMcRoqs3g'
+    'UCHkbIdjKbk14EIkMcRoqs3g',
+    'UCAKyXT0Vot7GHxtWKOEe4cg',
+    'UCOYorfo-ueDgFg-6B24GJnQ',
+    'UCYWBtJ62J2RBARQJvRCQU4g',
+    'UCnIdnC__X7Ywaf5bl5wGMpA',
+    'UCrkgqEJL5Kd5gBBHL4wTG9Q',
+    'UC_s7d7w9BIZgAVwmzA7hBMw',
+    'UCz1Bnml93YeUmCT5BH0763g'
 ];
 let cData = []
 function arrayPush(item) {
