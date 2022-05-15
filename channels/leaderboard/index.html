@@ -28,7 +28,7 @@
 				<h2 class="display-1">Channel Leaderboard</h2>
 			</div>
 		</div>
-		
+
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -45,15 +45,14 @@
 
 			var iterationCard = 1;
 			while (iterationCard <= CONFIG.numberOfChannels / CONFIG.numberOfRows) {
-				console.log(2222)
+
 				var channelNumberObject = Math.floor(iterationCard + ((iterationRow - 1) * CONFIG.numberOfChannels / CONFIG.numberOfRows));
-				
-				// let id = CHANNELID[channelNumberObject - 1];
+
 				let id = channelNumberObject - 1
 				var htmlSubscriberCard = `<div class='${id} channel_${channelNumberObject} card'>
 					<img class='channelImage card-img-top img-fluid rounded-top' id='${id}-img' src='https://yt3.ggpht.com/a-/AAuE7mB98CJL1Ye38OXbGM8WMR8lJVJRV_kXU1utHA=s240-mo-c-c0xffffffff-rj-k-no'/>
 					<ul class='list-group list-group-flush'>
-						<li class='list-group-item bg-danger'>
+						<li class='list-group-item bg-primary'>
 							<h5 class='channelName card-title text-center text-white text-truncate' id='${id}-name'>Empty</h5>
 							</li>
 						<li class='list-group-item text-center'>
