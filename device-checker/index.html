@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,26 @@
     <title>Device Checker</title>
     <link rel="stylesheet" href="../global.css">
 </head>
+
 <body>
     <Center>
-    <h1>Device: <div id="device">Loading...</div></h1>
+        <h1>Device: <div id="device">Loading...</div>
+        </h1>
     </Center>
     <script>
-var _0xb33776=_0x27f6;(function(_0x50bdf8,_0x33338b){var _0x399205=_0x27f6,_0xc46455=_0x50bdf8();while(!![]){try{var _0x51ce16=-parseInt(_0x399205(0x1b9))/0x1+-parseInt(_0x399205(0x1be))/0x2*(parseInt(_0x399205(0x1b7))/0x3)+-parseInt(_0x399205(0x1c4))/0x4*(-parseInt(_0x399205(0x1b6))/0x5)+-parseInt(_0x399205(0x1b8))/0x6*(-parseInt(_0x399205(0x1bf))/0x7)+-parseInt(_0x399205(0x1c3))/0x8*(parseInt(_0x399205(0x1c7))/0x9)+parseInt(_0x399205(0x1bc))/0xa*(parseInt(_0x399205(0x1c8))/0xb)+parseInt(_0x399205(0x1bd))/0xc;if(_0x51ce16===_0x33338b)break;else _0xc46455['push'](_0xc46455['shift']());}catch(_0x4de270){_0xc46455['push'](_0xc46455['shift']());}}}(_0x5602,0xe2e52));var body=document[_0xb33776(0x1c2)],html=document[_0xb33776(0x1b4)],width=Math[_0xb33776(0x1c6)](body[_0xb33776(0x1c1)],body[_0xb33776(0x1bb)],html['clientWidth'],html[_0xb33776(0x1c1)],html['offsetWidth']);function _0x5602(){var _0x115bd4=['max','2069199MYbHJX','5607316Eviadt','documentElement','getElementById','15hsYIze','837PjcKTO','481482xmSSQb','1576075wrkQRl','PC/Laptop','offsetWidth','30meMZqr','13521444FdtOVY','7092XtkMsh','14nIShkb','innerText','scrollWidth','body','40EvPTBr','2437036xaUHEu','device'];_0x5602=function(){return _0x115bd4;};return _0x5602();}function _0x27f6(_0x2039f3,_0x27c5ff){var _0x560247=_0x5602();return _0x27f6=function(_0x27f672,_0x33a160){_0x27f672=_0x27f672-0x1b4;var _0x5a8b70=_0x560247[_0x27f672];return _0x5a8b70;},_0x27f6(_0x2039f3,_0x27c5ff);}console['log'](width);if(width<=0x280)document['getElementById'](_0xb33776(0x1c5))[_0xb33776(0x1c0)]='Mobile/Ipad';else(_0x47057f=>0x280)&&(document[_0xb33776(0x1b5)]('device')[_0xb33776(0x1c0)]=_0xb33776(0x1ba));
+
+        var body = document.body,
+            html = document.documentElement;
+
+        var width = Math.max(body.scrollWidth, body.offsetWidth,
+            html.clientWidth, html.scrollWidth, html.offsetWidth);
+        console.log(width)
+        if (width <= 640) {
+            document.getElementById('device').innerText = " 📱 Mobile"
+        } else if (width => 640) {
+            document.getElementById('device').innerText = " 💻 Desktop"
+        }
     </script>
 </body>
+
 </html>

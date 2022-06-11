@@ -1,9 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
 <head>
   <meta charset="UTF-8">
   <title>Naz</title>
@@ -13,20 +12,35 @@
   <meta name="theme-color" content="#37383F">
   <meta name="msapplication-navbutton-color" content="#37383F">
   <meta name="apple-mobile-web-app-status-bar-style" content="#37383F">
+  <script> async function quote() {
+    await fetch('https://animechan.vercel.app/api/random')
+       .then(response => response.json())
+       .then(data => {console.log(data)
+   document.getElementById('quote').innerHTML = `"${data.quote}" \n <p style="color: #977fd7">-${data.character}<p>`
+
+})
+}
+
+function hideQuote() {
+  document.getElementById("quote").style.display = "none";
+}
+</script>
+
 </head>
 
-<body onload="quote()">
-<canvas id="c"></canvas>
-<script src="https://www.seedte.ch/js/index.js"></script>
-<div class="boxcontainer clickable">
-  <div class="box clickable" id="box" style="display: block;">
-    <h1 class="title">Naz</h1>
-    <p class="desc">
-      <span style="color: #4087ED">Youtuber</span>;
-      <span style="color: #ac39ac"><br>Developer</span>;
-      <span style="color: #dc3b3b">Discorder</span>;
-<script data-cfasync="false" src="https://www.seedte.ch/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
-<span class="title" id="quote">...</span>
-<script src="script.js"></script>
+<body onload="quote()" onclick="hideQuote()">
+  <canvas id="c"></canvas>
+  <script src="https://www.seedte.ch/js/index.js"></script>
+  <div class="boxcontainer clickable">
+    <div class="box clickable" id="box" style="display: block;">
+      <h1 class="title">Naz</h1>
+      <p class="desc">
+        <span style="color: #4087ED">Youtuber</span>;
+        <span style="color: #ac39ac"><br>Developer</span>;
+        <span style="color: #dc3b3b">Discorder</span>;
+        <script data-cfasync="false"
+          src="https://www.seedte.ch/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+<span class="title" id="quote" style="display: inline-block;">💀Loading💀</span>
 
 </html>

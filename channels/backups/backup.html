@@ -10,9 +10,15 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Inconsolata|Droid+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./odometer/odometer.js"></script>
+	<script src="script.js"></script>
 	<style type="text/css">
 		body {
+			text-decoration: none;
+			color: inherit;
 			font-family: Open Sans;
+
 		}
 	</style>
 
@@ -23,50 +29,54 @@
 
 	<div class="container-fluid">
 
-		<div class="row bg-danger text-white rounded">
-			<div class="col-l">
-				<h2 class="display-1">Channel Leaderboard</h2>
+		<!-- <div class="row bg-danger text-white rounded">
+			<div class="col-1">
+				<h2 class="display-4">Channel Leaderboard</h2>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="./odometer/odometer.js"></script>
-	<script src="script.js"></script>
+
 
 	<script type="text/javascript">
-
 		var iterationRow = 1;
 		while (iterationRow <= CONFIG.numberOfRows) {
+
 			var htmlRow = '<div class="row row_' + iterationRow + '"> <div class="col-l"> <div class="card-group border-0"> </div> </div> </div>';
-
 			$(".container-fluid").append(htmlRow);
-
 			var iterationCard = 1;
 			while (iterationCard <= CONFIG.numberOfChannels / CONFIG.numberOfRows) {
-
 				var channelNumberObject = Math.floor(iterationCard + ((iterationRow - 1) * CONFIG.numberOfChannels / CONFIG.numberOfRows));
-
 				let id = channelNumberObject - 1
 				var htmlSubscriberCard = `<div class='${id} channel_${channelNumberObject} card'>
-					<img class='channelImage card-img-top img-fluid rounded-top' id='${id}-img' src='https://yt3.ggpht.com/a-/AAuE7mB98CJL1Ye38OXbGM8WMR8lJVJRV_kXU1utHA=s240-mo-c-c0xffffffff-rj-k-no'/>
+					<img class='channelImage card-img-top img-fluid rounded-top' id='${id}-img' style="img:hover {border-radius: 40% !important;}" src='https://yt3.ggpht.com/a-/AAuE7mB98CJL1Ye38OXbGM8WMR8lJVJRV_kXU1utHA=s240-mo-c-c0xffffffff-rj-k-no'/>
 					<ul class='list-group list-group-flush'>
+					<a id="${id}-link" href="#">
+
 						<li class='list-group-item bg-primary'>
 							<h5 class='channelName card-title text-center text-white text-truncate' id='${id}-name'>Empty</h5>
 							</li>
+				</a>
+
 						<li class='list-group-item text-center'>
 							<h2 class='subscriberCount card-title text-center odometer' id='${id}-sub'>000</h2>
 						</li>
 					</ul>
-					</div>`;
-
-
+					</div>
+					
+					
+					
+					var htmlcard = '<div class="channel_'+iterationcard+' card">
+						<img src="'+imgUrl+'" class="channelImage">
+						<div class="card-content">
+							<div class="channelName">'+chanName+'</div>
+								<div class="odometer subscriberCount">0</div>
+							</div>
+						</div>';`;
 				$(".row_" + iterationRow + " .col-l .card-group").append(htmlSubscriberCard);
-
 				iterationCard++;
 			};
-
 			iterationRow++;
 		};
 	</script>
