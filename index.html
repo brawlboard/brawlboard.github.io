@@ -12,7 +12,8 @@
   <meta name="theme-color" content="#37383F">
   <meta name="msapplication-navbutton-color" content="#37383F">
   <meta name="apple-mobile-web-app-status-bar-style" content="#37383F">
-  <script> async function quote() {
+  <script>
+  async function quote() {
     await fetch('https://animechan.vercel.app/api/random')
        .then(response => response.json())
        .then(data => {console.log(data)
