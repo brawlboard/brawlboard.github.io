@@ -5,7 +5,10 @@ let id = iterationcard
 	var htmlcard = `<div class="${iterationcard} card">
     <img src="https://yt3.ggpht.com/a-/AAuE7mB98CJL1Ye38OXbGM8WMR8lJVJRV_kXU1utHA=s240-mo-c-c0xffffffff-rj-k-no" id='${id}-img' class="channelImage">
     <div class="card-content">
-    <div class="channelName" id='${id}-name'>loading</div>
+    <a id='${id}-link' style="text-decoration: none;">
+    <div class="channelName" id='${id}-name' >loading</div>
+    </a>
+    <div style="float: right;" id="${id}-diff">∞</div>
     <hr class="new">
     <div class="odometer subscriberCount" id='${id}-sub'>0</div>
     </div>
@@ -21,6 +24,7 @@ let cData = []
 function arrayPush(item) {
     if (!cData.find(({ id }) => id === item.id)) {
         cData.push(item);
+        localStorage.setItem(item.id, item.subcount)
 
     }
     if (cData.find(({ id }) => id === item.id)) {
@@ -67,11 +71,12 @@ async function updateCounter() {
             var foundIndex = cData.findIndex(x => x.id == item.id);
             obj = cData[foundIndex];
             let channelID = obj.id;
-            console.log(channelID)
+            let difference = obj.subcount - localStorage.getItem(channelID);
             document.getElementById(foundIndex + '-sub').innerText = obj.subcount;
             document.getElementById(foundIndex + '-name').innerText = obj.name;
+            document.getElementById(foundIndex + '-diff').innerText = `[ ${difference} ] `;
             document.getElementById(foundIndex + '-img').src = obj.logo;
-            // document.getElementById(foundIndex + '-link').href = `https://www.youtube.com/channel/${obj.id}/videos`;
+            document.getElementById(foundIndex + '-link').href = `https://www.youtube.com/channel/${obj.id}/videos`;
         }
     };
 };
