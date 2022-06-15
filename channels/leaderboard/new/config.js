@@ -45,7 +45,6 @@ let CHANNELID = [
     'UCrkgqEJL5Kd5gBBHL4wTG9Q',
     'UC_s7d7w9BIZgAVwmzA7hBMw',
     'UCz1Bnml93YeUmCT5BH0763g',
-    'UCOYorfo-ueDgFg-6B24GJnQ',
     'UC3CeKXNtheO1jvomemi07FA',
     'UCoRN5jBTbaZB7FRdR-9s2UQ',
     'UCmzWmYedt2BxCEaBb_-oxWQ',

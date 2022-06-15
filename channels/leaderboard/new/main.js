@@ -1,5 +1,5 @@
 
-var iterationcard = 1;
+var iterationcard = 0;
 while (iterationcard <= channelcount) {
     let id = iterationcard
     var htmlcard = `<div class="${iterationcard} card">
