@@ -47,8 +47,7 @@ function updateData() {
                 },
             }).then(response => response.json()).then(result => {
                 if (!result) return console.log(id);
-                
-                    let a = {
+                let a = {
                     id: id,
                     subcount: parseInt(result.counts[0].count) || 0,
                     name: result.user[0].count,
